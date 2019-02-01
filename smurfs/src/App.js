@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import  SmurfList from './components/SmurfList';
-// import  SmurfForm from './components/SmurfForm';
+import  SmurfForm from './components/SmurfForm';
 import { fetchSmurfs } from './actions';
 
 /*
@@ -23,7 +23,10 @@ componentDidMount(){
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
+
+        <SmurfForm />
         <SmurfList smurfs={this.props.smurfs} />
+        
       </div>
     );
   }

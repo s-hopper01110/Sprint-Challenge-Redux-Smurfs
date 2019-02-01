@@ -9,9 +9,9 @@ export const SMURFS_START = 'SMURFS_START';
 export const SMURFS_SUCCESS = 'SMURFS_SUCCESS';
 export const SMURFS_FAILURE = 'SMURFS_FAILURE';
 
-// export const ADD_NEW_SMURF_START = 'ADD_NEW_SMURF_START';
-// export const ADD_NEW_SMURF_SUCCESS = 'ADD_NEW_SMURF_SUCCESS';
-// export const ADD_NEW_SMURF_FAILURE = 'ADD_NEW_SMURF_FAILURE';
+export const ADD_NEW_SMURF_START = 'ADD_NEW_SMURF_START';
+export const ADD_NEW_SMURF_SUCCESS = 'ADD_NEW_SMURF_SUCCESS';
+export const ADD_NEW_SMURF_FAILURE = 'ADD_NEW_SMURF_FAILURE';
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -27,15 +27,15 @@ export const SMURFS_FAILURE = 'SMURFS_FAILURE';
 
 export const fetchSmurfs = () => dispatch => {
   dispatch({ type: SMURFS_START })
-  axios.get('http://localhost:3333/smurfs')
+  axios.get('http://localhost:3333/smurfs' )
   .then(res => dispatch({ type: SMURFS_SUCCESS, payload: res.data}))
   .catch(err =>dispatch({ type: SMURFS_FAILURE, payload:err}))
 }
 
-// export const addSmurf = (smurfS) => dispatch => {
-//   dispatch({ type: ADD_NEW_SMURF_START })
-//   axios.get('http://localhost:3333/smurfs')
-//   .then(res => dispatch({ type: ADD_NEW_SMURF_SUCCESS, payload: res.data}))
-//   .catch(err =>dispatch({ type: ADD_NEW_SMURF_FAILURE , payload:err}))
-// }
+export const addSmurf = (smurfS) => dispatch => {
+  dispatch({ type: ADD_NEW_SMURF_START })
+  axios.post('http://localhost:3333/smurfs', smurfS)
+  .then(res => dispatch({ type: ADD_NEW_SMURF_SUCCESS, payload: res.data}))
+  .catch(err =>dispatch({ type: ADD_NEW_SMURF_FAILURE , payload:err}))
+}
 

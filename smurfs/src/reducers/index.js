@@ -58,27 +58,27 @@ const smurfsReducer = (state = initialState, action) => {
           fetchingSmurfs:false
       }
 
-      // case 'ADD_NEW_SMURF_START':
-      // return {
-      //     ...state,
-      //     error: action.payload,
-      //     fetchingSmurfs:true
-      // }
+      case 'ADD_NEW_SMURF_START':
+      return {
+          ...state,
+          error: action.payload,
+          fetchingSmurfs:true
+      }
 
-      // case 'ADD_NEW_SMURF_SUCCESS':
-      // return {
-      //     ...state,
-      //     fetchingSmurfs:false,
-      //     error: null,
-      //     Smurfs: action.payload
-      // }
+      case 'ADD_NEW_SMURF_SUCCESS':
+      return {
+          ...state,
+          fetchingSmurfs:false,
+          error: null,
+          Smurfs: action.payload
+      }
 
-      // case 'ADD_NEW_SMURF_FAILURE':
-      // return {
-      //     ...state,
-      //     error: action.payload,
-      //     fetchingSmurfs:false
-      // }
+      case 'ADD_NEW_SMURF_FAILURE':
+      return {
+          ...state,
+          error: action.payload,
+          fetchingSmurfs:false
+      }
 
 
   default:
