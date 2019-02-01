@@ -62,7 +62,7 @@ const smurfsReducer = (state = initialState, action) => {
       return {
           ...state,
           error: action.payload,
-          fetchingSmurfs:true
+          addingSmurf: true
       }
 
       case 'ADD_NEW_SMURF_SUCCESS':
@@ -70,14 +70,14 @@ const smurfsReducer = (state = initialState, action) => {
           ...state,
           fetchingSmurfs:false,
           error: null,
-          Smurfs: action.payload
+          smurfs: action.payload
       }
 
       case 'ADD_NEW_SMURF_FAILURE':
       return {
           ...state,
           error: action.payload,
-          fetchingSmurfs:false
+          addingSmurf: false
       }
 
 
